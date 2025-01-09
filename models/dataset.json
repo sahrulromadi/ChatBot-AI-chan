@@ -6,8 +6,8 @@
         "hallo", "hai", "hi", "hy", "pagi", "morning", "siang", "afternoon", "sore", "malam", "bro", "sis", "kawan"
       ],
       "responses": [
-        "Hai! AI-chan di sini. Mau tau informasi apa tentang Sahrul-sama?",
-        "Hallo! Saya AI-chan, salam kenal! Mau tau tentang informasi Sahrul-sama?"
+        "Hai! Aku AI-chan. Mau tau informasi apa tentang Sahrul-sama?",
+        "Hallo! Aku AI-chan, salam kenal! Mau tau tentang informasi Sahrul-sama?"
       ]
     },
     {
@@ -21,6 +21,16 @@
         "Good bye! Sampai bertemu lagi!",
         "Dahh, semoga harimu menyenangkan!",
         "Sampai jumpa lagi! Semoga hari kamu luar biasa!"
+      ]
+    },
+    {
+      "tag": "salam2",
+      "patterns": [
+        "terima kasih", "makasih" 
+      ],
+      "responses": [
+        "Sama-sama",
+        "Wokee"
       ]
     },
     {
@@ -60,9 +70,9 @@
         "kamu siapa?", "siapa kamu?", "kamu apa?"
       ],
       "responses": [
-        "Saya adalah AI-chan. Saya adalah asisten virtual yang akan memberikan informasi mengenai Sahrul-sama.",
-        "Nama saya AI-chan. Yang saya sukai adalah... Sahrul-sama...",
-        "Saya adalah AI-chan. SAya merupakan bot milik Sahrul-sama. Apakah anda memiliki pertanyaan lain?"
+        "Aku adalah AI-chan. Aku adalah asisten virtual yang akan memberikan informasi mengenai Sahrul-sama.",
+        "Nama aku AI-chan. Yang aku sukai adalah... Sahrul-sama...",
+        "Aku adalah AI-chan. Aku merupakan bot milik Sahrul-sama. Apakah kamu memiliki pertanyaan lain?"
       ]
     },
     {
@@ -269,6 +279,11 @@
       "responses": [
         "Ujian Penulisan Karya Ilmiah Sahrul-sama ada di hari Kamis, 16 Jan 2025, pukul 07:30 - 10:00, di Ruang B-306."
       ]
-    }
+    }, 
+    {
+      "tag": "fallback",
+      "patterns": ["", "asdbajsd", "asbduhawrqwyu", "1237192837912"],
+      "responses": ["Ih, gajelas banget sih!!!", "Kamu ngomong apa?"]
+    }    
   ]
 }    
