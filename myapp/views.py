@@ -33,7 +33,7 @@ def cleaning_text(sentence):
     tokens = [lemmatizer.lemmatize(word.lower()) for word in tokens if word.lower() not in string.punctuation]
     return ' '.join(tokens)
 
-# Prediksi intent menggunakan model
+# Prediksi intent menggunakan model tanpa threshold
 def predict_class(sentence, model):
     # Proses input yang sudah di-cleaning
     processed_sentence = cleaning_text(sentence)
@@ -42,18 +42,13 @@ def predict_class(sentence, model):
 
     # Prediksi model untuk setiap intent
     res = model.predict(features)[0]
-    ERROR_THRESHOLD = 0.3
-    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-    
-    # Filter intents berdasarkan probabilitas
-    results.sort(key=lambda x: x[1], reverse=True)
 
-    # Jika tidak ada hasil di atas threshold, kembalikan intent fallback
-    if not results:
-        return [{"intent": "fallback", "probability": "0"}]
+    # Ambil index dengan probabilitas tertinggi
+    max_index = res.argmax()
+    max_prob = res[max_index]
 
-    # Return intent yang sesuai
-    return [{"intent": classes[r[0]], "probability": str(r[1])} for r in results]
+    # Return intent dengan probabilitas tertinggi
+    return [{"intent": classes[max_index], "probability": str(max_prob)}]
 
 # Mendapatkan response berdasarkan intent
 def get_response(intents_list, intents_json):
